@@ -1,12 +1,21 @@
 $( document ).ready(function() {
     let $sideBar = $('#side-bar'),
-    	$helpProc = $('#h-d-4');
+    	$processes = $('.hd-titels'),
+    	sideBarIsOpen = 'N';
 
-	$helpProc.click(()=>{
+	$processes.click(()=>{	
 		let that = $(this);
-		togleSideBar();
-	});
 
+		if(sideBarIsOpen == 'N'){
+			togleSideBar();
+			sideBarIsOpen = 'Y';
+		}else{
+			togleSideBar();
+			setTimeout(togleSideBar, 500);
+		}
+		
+	});
+	
 	function togleSideBar () {
 
 		if($sideBar.hasClass('hidden')){
