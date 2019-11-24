@@ -5,6 +5,7 @@
 	<title>Manege Node-RED</title>
 	<link rel="stylesheet" href="main.css">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
@@ -23,16 +24,33 @@
 			<h3>Вспомогательные процессы</h3>
 		</div>
 	</header>	
-	<section id = "preview-block-info">
-		<h3 id = "titele-preview">
+	<section id = "main-section">
+		<h3 id = "title-cur-block">
 			<span>
 				Менеджер процессов
 				"Полиграфологической Cлужбы"
 			</span>
 		</h3>
-		<p>
-			Это елементарный интерфейс, который разработан для управления процссами Департамента полиграфологическая служба банка, что реализованы на платформе Node-RED.
-		</p>
+		<div id = "cont-4-output">
+			<p>
+				Этот елементарный интерфейс разработан для управления процессами Департамента "Полиграфологическая служба" банка, что реализованы на платформе Node-RED. <br> Включает в себя 4 раздела:
+				<ol>
+					<li>Внутренние процессы службы</li>
+					<li>Мотивационные беседы</li>
+					<li>Беседы по результатам</li>
+					<li>Вспомогательные процессы</li>
+				</ol>
+				 При выборе одного из разделов должно отобразится боковое меню. В данном меню будут представлены подблоки каждого раздела. При активации соответствуещего блока в центральной части отобразится интерфейс для взаимодействия с сответствующей частью процесса. 
+			</p>
+		</div>		
+	</section>
+	<section id="side-bar" class="animated ">
+		<div id="side-bar-cont">
+			<ol>
+				<li>Пользовательськая сессия</li>
+				<li>Техничемкая сессия</li>
+			</ol>
+		</div>
 	</section>
 </body>
 </html>

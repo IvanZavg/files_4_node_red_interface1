@@ -40,11 +40,11 @@ body {
 	 background-color: rgba(20, 20, 20, 0.9);
 }
 
-#titele-preview{
+#title-cur-block{
 	display: block;
     text-align: right;
-    font-size: 34px;
-    line-height: 54px;
+    font-size: 24px;
+    line-height: 40px;
     font-weight: normal;
     margin-bottom: 0.5em;
     margin-top: 0.7em;
@@ -53,7 +53,7 @@ body {
 
 }
  
-#titele-preview span{
+#title-cur-block span{
     padding: 4px 10px ;
     position: relative;
     color: #666;
@@ -62,18 +62,44 @@ body {
     background-color: rgba(0, 0, 0, 0.05);
     border-radius: 5px;
 }
-#preview-block-info{
+#main-section{
 	float: right;
     background-color: #fff;
     border-radius: 3px;
     padding: 10px 15px 15px;
     border: 1px solid #ddd;
-    width: 75%;
+    width: 70%;
     margin: 2em 1em;
 }
 
-#preview-block-info p {
+#main-section p {
 	padding: 10px;
 	text-align: left;
 	font-size: 1em;
+}
+
+#side-bar{
+	opacity: 0;
+	width:23%;
+	min-height: 500px;
+	margin: 2em 1em;
+	border-radius: 3px;
+	background-color:rgba(40, 40, 40, 0.9);
+	color: rgba(240, 240, 240, 1);
+}
+#side-bar-cont ol{
+	padding: 0px;
+}
+#side-bar-cont li{
+	list-style-position: inside;
+	padding: 10px;
+	border-bottom: 2px groove ;
+	cursor: pointer;
+}
+
+#side-bar-cont li:hover{
+	 background-color: rgba(34, 34, 34, 0.9);
+}
+#side-bar-cont li:active{
+	 background-color: rgba(20, 20, 20, 0.9);
 }
