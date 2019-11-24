@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Manege Node-RED</title>
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="main.css">	
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,16 +11,16 @@
 </head>
 <body>
 	<header id='main-menu'>
-		<div id="h-d-1" class="hd-titels">
+		<div id="h-d-1" class="hd-titels" data-active="none">
 			<h3>Внутренние процессы службы</h3>
 		</div>
-		<div id="h-d-2" class="hd-titels">
+		<div id="h-d-2" class="hd-titels" data-active="none">
 			<h3>Мотивационные беседы</h3>
 		</div>
-		<div id="h-d-3" class="hd-titels">
-			<h3>Беседы по результатам</h3>
+		<div id="h-d-3" class="hd-titels" data-active="none">
+			<h3>Беседы по результатам</h3 >
 		</div>
-		<div id="h-d-4" class="hd-titels">
+		<div id="h-d-4" class="hd-titels" data-active="none">
 			<h3>Вспомогательные процессы</h3>
 		</div>
 	</header>	
@@ -44,7 +44,7 @@
 			</p>
 		</div>		
 	</section>
-	<section id="side-bar" class="animated ">
+	<section id="side-bar" class="animated hidden">
 		<div id="side-bar-cont">
 			<ol>
 				<li>Пользовательськая сессия</li>
