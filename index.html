@@ -11,27 +11,35 @@
 </head>
 <body>
 	<header id='main-menu'>
-		<div id="h-d-1" class="hd-titels" data-active="none">
+		<div id="incom-proc" name="incomProc" class="main-menu-titles" data-is_active="none">
 			<h3>Внутренние процессы службы</h3>
 		</div>
-		<div id="h-d-2" class="hd-titels" data-active="none">
+		<div id="motiv-proc" name="motivTalks" class="main-menu-titles" data-is_active="none">
 			<h3>Мотивационные беседы</h3>
 		</div>
-		<div id="h-d-3" class="hd-titels" data-active="none">
+		<div id="after-test-talks" name="afterTestTalks" class="main-menu-titles" data-is_active="none">
 			<h3>Беседы по результатам</h3 >
 		</div>
-		<div id="h-d-4" class="hd-titels" data-active="none">
+		<div id="help-proc" name="helpProc" class="main-menu-titles" data-is_active="none">
 			<h3>Вспомогательные процессы</h3>
 		</div>
-	</header>	
-	<section id = "main-section">
-		<h3 id = "title-cur-block">
+	</header>
+	<section id="side-bar" class="animated hidden">
+		<div id="side-bar-cntr">
+			<ol>
+				<li>Пользовательськая сессия</li>
+				<li>Техничемкая сессия</li>
+			</ol>
+		</div>
+	</section>	
+	<section id = "main-block">
+		<h3 id = "main-block-title">
 			<span>
 				Менеджер процессов
 				"Полиграфологической Cлужбы"
 			</span>
 		</h3>
-		<div id = "cont-4-output">
+		<div id = "main-block-output">
 			<p>
 				Этот елементарный интерфейс разработан для управления процессами Департамента "Полиграфологическая служба" банка, что реализованы на платформе Node-RED. <br> Включает в себя 4 раздела:
 				<ol>
@@ -43,14 +51,6 @@
 				 При выборе одного из разделов должно отобразится боковое меню. В данном меню будут представлены подблоки каждого раздела. При активации соответствуещего блока в центральной части отобразится интерфейс для взаимодействия с сответствующей частью процесса. 
 			</p>
 		</div>		
-	</section>
-	<section id="side-bar" class="animated hidden">
-		<div id="side-bar-cont">
-			<ol>
-				<li>Пользовательськая сессия</li>
-				<li>Техничемкая сессия</li>
-			</ol>
-		</div>
-	</section>
+	</section>	
 </body>
 </html>
