@@ -9,6 +9,7 @@ body {
 }
 
 #main-menu{
+	cursor: pointer;
 	display: flex;
 	flex-wrap: wrap;
 	min-width: 90%;
@@ -25,7 +26,7 @@ body {
 	font-size: 1em;
 	text-align: center;
 	color: rgba(240, 240, 240, 1);
-	cursor: pointer;
+
 
 }
 
@@ -82,7 +83,14 @@ body {
 	background-color:rgba(40, 40, 40, 0.9);
 	color: rgba(240, 240, 240, 1);
 }
+
+#side-bar p{
+	text-align: center;
+	margin: 15px;
+}
+
 #side-bar-cntr ol{
+	margin: 0px;
 	padding: 0px;
 }
 #side-bar-cntr li{
@@ -94,9 +102,15 @@ body {
 
 #side-bar-cntr li:hover{
 	 background-color: rgba(34, 34, 34, 0.9);
+
 }
 #side-bar-cntr li:active{
 	 background-color: rgba(20, 20, 20, 0.9);
+}
+
+#side-bar-cntr li:first-child{
+	border-top-left-radius: 3px;
+	 border-top-right-radius: 3px;
 }
 
 .hidden{

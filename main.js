@@ -1,89 +1,141 @@
 $( document ).ready(function() {
 
-    let $sideBar = $('#side-bar'),
+    let $sideBar      = $('#side-bar'),
+    	$sideBarCntr  = $('#side-bar-cntr'),
     	$headerTitels = $('.main-menu-titles'),
-    	$mBlockTitle = $('#main-block-title'),
-    	$cntr4OutPut = $('#main-block-output');
+    	$mBlockTitle  = $('#main-block-title'),
+    	$cntr4OutPut  = $('#main-block-output');
 
    	let sideBarIsOpen = 'N';
 	let mainMenuData = {
 		incomProc : {
 			id : "incom-proc",
-			infoTitle : "",
-			infoBlock : "",
+			infoTitle : "Внутренние процессы Полиграфологической службы",
+			infoBlock : "В процессе разработки",
 			isOpen : false,
-			subTitels : []
+			subTitels : [
+				{
+					title : "Тест",
+					name : "test",
+					url : ""
+				}
+			]
 		},
 		motivTalks : {
 			id : "motiv-proc",
 			isOpen : false,
-			infoTitle : "",
-			infoBlock : "",
+			infoTitle : "Мотивационные беседы перед полиграфом",
+			infoBlock : "В процессе разработки",
 			subTitels : []
 		},
 		afterTestTalks :{
 			id : "after-test-talks",
 			isOpen : false,
-			infoTitle : "",
-			infoBlock : "",
+			infoTitle : "Беседы по результатам полиграф тестирования",
+			infoBlock : "В процессе разработки",
 			subTitels : []
 		},
 		helpProc : {
 			id : "help-proc",
 			isOpen : false,
-			infoTitle : "",
+			infoTitle : "Вспомогательные процессы",
 			infoBlock : "",
-			subTitels : []
+			subTitels : [
+				{
+					title : "Пользовательськая сессия",
+					name : "userSID",
+					url : ""
+				},
+				{
+					title : "Техничемкая сессия",
+					name : "techSID",
+					url : ""
+				},
+				{
+					title : "Тест",
+					name : "test",
+					url : ""
+				}
+			]
 		}
 	};   
 
 
 	$headerTitels.click(function(){	
 
-		let $that = $(this);
+		let $that    = $(this);
 		let menuName = $that.attr('name');
 		let menuData = mainMenuData[menuName];
-
-		viewSideBar(menuData);
+		let subArr   = mainMenuData[menuName].subTitels;
+	
+		viewSideBar(menuData, subArr);
 		
 	});
 
 
 
-	function viewSideBar(mName){
+
+	function clearSideBar(){
+		$sideBarCntr.empty();
+	}
+
+
+	function fillSidBar(subArr){
+		let ol = $('<ol>');
+
+		if(subArr.length == 0){
+			$sideBarCntr.append("<p>данный блок находится в разработке<p>");
+		}
+		else{
+			for (var i = 0; i < subArr.length;  i++) {
+				ol.append(`<li>${subArr[i].title}</li>`);
+			}
+			$sideBarCntr.append(ol);
+		}
+	}
+
+
+	function viewSideBar(mData, subArr){
 		if(sideBarIsOpen == 'N'){
-			mName.isOpen = true;
-			togleSideBar();
+			mData.isOpen = true;
+			togleSideBar(subArr);
 			sideBarIsOpen = 'Y';
 		}
-		else if (sideBarIsOpen == 'Y' && mName.isOpen == true){
+		else if (sideBarIsOpen == 'Y' && mData.isOpen == true){
 			sideBarIsOpen = 'N';
-			mName.isOpen == false;
+			mData.isOpen = false;
 			$sideBar.removeClass('bounceInLeft').addClass('bounceOutLeft');
 		}
 		else{
 			tglMainMenuState();
-			mName.isOpen = true;
-			togleSideBar();
-			setTimeout(togleSideBar, 500);
+			mData.isOpen = true;
+			togleSideBar(subArr);
+			setTimeout(togleSideBar, 500, subArr);
 		}
 	}
 
-	function tglMainMenuState(){
+
+	function tglMainMenuState(subArr){
 		for(key in mainMenuData){
 			if(mainMenuData[key].isOpen == true){
 				mainMenuData[key].isOpen = false;
 			}
 		}
 	}
-	
-	function togleSideBar () {
 
+	
+	function togleSideBar (subArr) {
 		if($sideBar.hasClass('hidden')){
+			fillSidBar(subArr);
 			$sideBar.addClass('bounceInLeft').removeClass('hidden');
-		}else if (!$sideBar.hasClass('hidden') && $sideBar.hasClass('bounceInLeft')) {
+		}
+		else if (!$sideBar.hasClass('hidden') && $sideBar.hasClass('bounceInLeft')) {
 			$sideBar.removeClass('bounceInLeft').addClass('bounceOutLeft');
-		}else if($sideBar.hasClass('bounceOutLeft')){
+
+		}
+		else if($sideBar.hasClass('bounceOutLeft')){
+			clearSideBar();
+			fillSidBar(subArr);
 			$sideBar.removeClass('bounceOutLeft').addClass('bounceInLeft');
 		}
 	}
