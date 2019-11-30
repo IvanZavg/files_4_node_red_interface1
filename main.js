@@ -79,21 +79,22 @@ $( document ).ready(function() {
 		$sideBarCntr.empty();
 	}
 
-
 	function fillSidBar(subArr){
 		let ol = $('<ol>');
 
 		if(subArr.length == 0){
+
 			$sideBarCntr.append("<p>данный блок находится в разработке<p>");
 		}
 		else{
+
 			for (var i = 0; i < subArr.length;  i++) {
 				ol.append(`<li>${subArr[i].title}</li>`);
 			}
+
 			$sideBarCntr.append(ol);
 		}
 	}
-
 
 	function viewSideBar(mData, subArr){
 		if(sideBarIsOpen == 'N'){
@@ -114,7 +115,6 @@ $( document ).ready(function() {
 		}
 	}
 
-
 	function tglMainMenuState(subArr){
 		for(key in mainMenuData){
 			if(mainMenuData[key].isOpen == true){
@@ -122,7 +122,6 @@ $( document ).ready(function() {
 			}
 		}
 	}
-
 	
 	function togleSideBar (subArr) {
 		if($sideBar.hasClass('hidden')){
@@ -131,7 +130,6 @@ $( document ).ready(function() {
 		}
 		else if (!$sideBar.hasClass('hidden') && $sideBar.hasClass('bounceInLeft')) {
 			$sideBar.removeClass('bounceInLeft').addClass('bounceOutLeft');
-
 		}
 		else if($sideBar.hasClass('bounceOutLeft')){
 			clearSideBar();
