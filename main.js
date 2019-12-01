@@ -3,7 +3,7 @@ $( document ).ready(function() {
     let $sideBar      = $('#side-bar'),
     	$sideBarCntr  = $('#side-bar-cntr'),
     	$headerTitels = $('.main-menu-titles'),
-    	$mBlockTitle  = $('#main-block-title'),
+    	$mBlockTitle  = $('#main-block-title span'),
     	$cntr4OutPut  = $('#main-block-output');
 
    	let sideBarIsOpen = 'N';
@@ -67,6 +67,9 @@ $( document ).ready(function() {
 		let menuName = $that.attr('name');
 		let menuData = mainMenuData[menuName];
 		let subArr   = mainMenuData[menuName].subTitels;
+
+		$mBlockTitle.text(menuData.infoTitle);
+    	$cntr4OutPut.text(menuData.infoBlock);
 	
 		viewSideBar(menuData, subArr);
 		
@@ -76,6 +79,7 @@ $( document ).ready(function() {
 
 
 	function clearSideBar(){
+		$('.side-bar-li').unbind()
 		$sideBarCntr.empty();
 	}
 
@@ -83,17 +87,30 @@ $( document ).ready(function() {
 		let ol = $('<ol>');
 
 		if(subArr.length == 0){
-
 			$sideBarCntr.append("<p>данный блок находится в разработке<p>");
 		}
 		else{
-
 			for (var i = 0; i < subArr.length;  i++) {
-				ol.append(`<li>${subArr[i].title}</li>`);
+				ol.append(`<li name="${subArr[i].name}" class="side-bar-li">${subArr[i].title}</li>`);
 			}
-
 			$sideBarCntr.append(ol);
+			$('.side-bar-li').bind('click', getIntrfBlock)
 		}
+	}
+
+	function getIntrfBlock () {
+		let $that     = $(this);
+		let intrfName = $that.attr('name'); 
+		$cntr4OutPut.text('дет загрузка данных . . .');
+
+		$.ajax({
+			  method: "GET",
+			  url: "http://127.0.0.1:1880/testUrl",
+			  data: { name: intrfName}
+			})
+		.done(function(data) {
+				$cntr4OutPut.empty().append(data);
+			});
 	}
 
 	function viewSideBar(mData, subArr){
