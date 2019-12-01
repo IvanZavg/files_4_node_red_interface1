@@ -69,7 +69,7 @@ $( document ).ready(function() {
 		let subArr   = mainMenuData[menuName].subTitels;
 
 		$mBlockTitle.text(menuData.infoTitle);
-    	$cntr4OutPut.text(menuData.infoBlock);
+    	$cntr4OutPut.empty().append(menuData.infoBlock);
 	
 		viewSideBar(menuData, subArr);
 		
@@ -101,7 +101,7 @@ $( document ).ready(function() {
 	function getIntrfBlock () {
 		let $that     = $(this);
 		let intrfName = $that.attr('name'); 
-		$cntr4OutPut.text('дет загрузка данных . . .');
+		$cntr4OutPut.text('Идет загрузка данных . . .');
 
 		$.ajax({
 			  method: "GET",
