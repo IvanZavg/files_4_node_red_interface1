@@ -94,11 +94,11 @@ $( document ).ready(function() {
 				ol.append(`<li name="${subArr[i].name}" class="side-bar-li">${subArr[i].title}</li>`);
 			}
 			$sideBarCntr.append(ol);
-			$('.side-bar-li').bind('click', getIntrfBlock)
+			$('.side-bar-li').bind('click', getControlBlock)
 		}
 	}
 
-	function getIntrfBlock () {
+	function getControlBlock () {
 		let $that     = $(this);
 		let intrfName = $that.attr('name'); 
 		$cntr4OutPut.text('Идет загрузка данных . . .');

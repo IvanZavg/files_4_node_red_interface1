@@ -52,7 +52,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 3px;
     background-color: #fff;
-    width: 68%;
+    width: 70%;
     min-height: 450px;
     margin: 2em 1em;
 }
@@ -83,6 +83,7 @@ body {
 	border-radius: 3px;
 	background-color:rgba(40, 40, 40, 0.9);
 	color: rgba(240, 240, 240, 1);
+	letter-spacing: 0.05em;
 }
 
 #side-bar p{
@@ -116,4 +117,17 @@ body {
 
 .hidden{
 	opacity:0;
+}
+
+h3 {
+    display: block;
+    font-size: 1.2em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 600;
+}
+label, input[type="radio"]{
+	cursor: pointer;
 }

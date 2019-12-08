@@ -3,9 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Manege Node-RED</title>
-	<link rel="stylesheet" href="main.css">	
 	<link href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script type="text/javascript" src="main.js"></script>
 </head>
@@ -29,12 +30,14 @@
 		</div>
 	</section>	
 	<section id = "main-block">
-		<h3 id = "main-block-title">
-			<span>
-				Менеджер процессов
-				"Полиграфологической Cлужбы"
-			</span>
-		</h3>
+		<div class="container">
+			<h3 id = "main-block-title">
+				<span>
+					Менеджер процессов
+					"Полиграфологической Cлужбы"
+				</span>
+			</h3>
+		</div>
 		<div id = "main-block-output">
 			<p>
 				Этот елементарный интерфейс разработан для управления процессами Департамента "Полиграфологическая служба" банка, что реализованы на платформе Node-RED. <br> Включает в себя 4 раздела:

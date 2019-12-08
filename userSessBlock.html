@@ -1,0 +1,209 @@
+<div class="container">
+	<div class="row">
+		<div class="d-flex flex-row col-12 ">
+			<button class="col-3 btn btn-outline-dark my-2 ml-1" type="submit" name="SendToken" data-group="btns-show-blocks">Запуск через токен</button>
+			<button class="col-3 btn btn-outline-dark my-2 ml-1" type="submit" name="StartLdap" data-group="btns-show-blocks">Запуск через пароль</button>
+ 			<button class="col-3 btn btn-outline-dark my-2 ml-1" type="submit" name="InfoSession" data-group="btns-show-blocks">Состояние сессии</button>  
+		</div>
+	</div>			
+	<div class="row bg-light rounded" style="display : none" id="block-send-token">
+		<div class="d-flex flex-row col-12  mt-3 mb-3">
+			<form class="form-inline">
+			    <input class="form-control mr-sm-2 ml-1" type="text" placeholder="session token" id="inp-send-token">
+			    <button class="btn btn-outline-success my-2 ml-1" type="submit" id="btn-send-token">Отправить</button>
+	 		</form>
+ 		</div>
+	</div>
+	<div class="row bg-light rounded"  style="display : none" id="block-start-sess">
+		<div class="col-12 mt-4">
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-start" id="r-s-type-start1" value="Prodaction">
+			  <label class="form-check-label" for="r-s-type-start1">Prodaction</label>
+			</div>
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-start" id="r-s-type-start2" value="Stage">
+			  <label class="form-check-label" for="r-s-type-start2">Stage</label>
+			</div>
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-start" id="r-s-type-start3" value="Test">
+			  <label class="form-check-label" for="r-s-type-start3">Test</label>
+			</div>						
+		</div>
+		<div class="d-flex flex-row col-12 justify-content-between mt-3 mb-4">
+			<form class="form-inline">						
+ 				<input class="col-4 form-control mr-sm-2 ml-1" type="text" placeholder="LDAP" id="ldap-4-start-sess">
+	    		<input class="col-4 form-control mr-sm-2 ml-1" type="password" placeholder="Password" id="psw-4-start-sess">
+	    		<button class="col-3 btn btn-outline-success my-2 ml-1" type="submit" id="btn-start-sess">Запустить</button>
+	 		</form>
+ 		</div>
+	</div>
+	<div class="row bg-light rounded"  style ="display : none" id="block-get-info">
+		<div class="col-12 mt-4">
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-info" id="r-s-type-info1" value="Prodaction">
+			  <label class="form-check-label" for="r-s-type-info1">Prodaction</label>
+			</div>
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-info" id="r-s-type-info2" value="Stage">
+			  <label class="form-check-label" for="r-s-type-info2">Stage</label>
+			</div>
+			<div class="form-check form-check-inline  ml-1">
+			  <input class="form-check-input" type="radio" name="sess-type-info" id="r-s-type-info3" value="Test">
+			  <label class="form-check-label" for="r-s-type-info3">Test</label>
+			</div>
+			<button class="col-3 btn btn-outline-success my-2 ml-1" type="submit" id="btn-get-info-sess">Состояние сессии</button>
+		</div>	
+	</div>
+	<div id="output-block-u-sess"></div>							 	
+</div>
+<script>
+	strtLogic();
+	function  strtLogic() {
+		let outPutBlock = $('#output-block-u-sess');
+		let controlBlocks = {
+				SendToken  : {
+					el      : $('#block-send-token'),
+					visible : 'N'
+				},
+				StartLdap   : {
+					el      : $('#block-start-sess'),
+					visible : 'N'
+				},
+				InfoSession : {
+					el      : $('#block-get-info'),
+					visible : 'N'
+				} 
+			}
+
+		let btnsShowBlocks = $('[data-group ="btns-show-blocks"]');
+
+		btnsShowBlocks.click(function () {
+			let $that = $(this);
+			let objBlock = controlBlocks[$that[0].name];
+			if(objBlock.visible == 'Y'){
+				return
+			}
+			else{
+				for (key in controlBlocks) {
+					let blck = controlBlocks[key];
+					if(blck.visible == 'Y') blck.el.hide();
+					blck.visible = 'N';				
+				}
+				outPutBlock.empty();
+				objBlock.el.show();
+				objBlock.visible = 'Y';
+			}
+		});
+
+
+		let btnSendToken = $('#btn-send-token'),
+		    btnStartSess = $('#btn-start-sess'),
+		    btnGetInfo   = $('#btn-get-info-sess');
+
+	    btnSendToken.click(function (event)  {
+	    	event.preventDefault();
+
+	    	let inpToken = $('#inp-send-token'),
+	    		regToken = /[\w\d]{20}/i;
+
+	    	if(!regToken.test(inpToken.val())){
+	    		outPutBlock.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-danger">
+												не корректный токкен : "${inpToken.val()}, длина ${inpToken.val().length} символов" 
+												Токкен должен быть из 20 символов
+											</div>
+										  </div> `);
+	    		return;
+	    	}
+	    	let	bodyReq  = {
+	    			name     : 'test',
+	    			value    : inpToken.val(),
+	    			sessType : 'Prodaction'
+	    		};
+
+	    	inpToken.val('');
+	    	outPutBlock.text('Идет загрузка данных . . .');
+	    	sendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);
+	    }); 
+
+	    btnStartSess.click(function (event)  {
+	    	event.preventDefault();
+	    	let inpLDAP  = $('#ldap-4-start-sess'),
+	    		inpPSW   = $('#psw-4-start-sess'),
+	    		sessType = $('input[name="sess-type-start"]:checked'),
+	    		regLDAP  =/^\w{2}\d{6}\w{3}(?:\d{1,2})?$/i;
+
+	    	if(!sessType.val()){
+	    		outPutBlock.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-danger">
+												Не выбран тип сессии(Prodaction, Stage, Test)
+											</div>
+										  </div> `);
+	    		return;
+	    	}
+	    	else if (!regLDAP.test(inpLDAP.val())){
+	    		outPutBlock.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-danger">
+												Не корректный LDAP ${inpLDAP.val()}
+											</div>
+										  </div> `);
+	    		return;
+	    	}
+	    	else if (!inpPSW.val()){
+	    		outPutBlock.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-danger">
+												Вы не указали пароль
+											</div>
+										  </div> `);
+	    		return;
+	    	}
+	    	let	bodyReq  = {
+	    			name     : 'test',
+	    			ldap     : inpLDAP.val(),
+	    			psw      : inpPSW.val(),
+	    			sessType : sessType.val()
+				};
+
+	    	inpLDAP.val('');
+	    	inpPSW.val('');	
+	    	outPutBlock.text('Идет загрузка данных . . .');
+	    	sendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);
+	    }); 
+
+	    btnGetInfo.click(function (event)  {
+	    	event.preventDefault();
+	    	let sessType = $('input[name="sess-type-info"]:checked');
+
+	    	if(!sessType.val()){
+	    		outPutBlock.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-danger">
+												Не выбран тип сессии(Prodaction, Stage, Test)
+											</div>
+										  </div> `);
+	    		return;
+	    	}
+	    	let	bodyReq  = {
+	    			name     : 'test',
+	    			sessType : sessType.val()
+				};
+
+			outPutBlock.text('Идет загрузка данных . . .');
+	    	sendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);
+	    }); 
+
+	    function sendAjax(urlReq, method, body, outPutBlc){
+	    	$.ajax({
+			  method : method,
+			  url    : urlReq,
+			  data   : body
+			})
+			.done(function(data) {
+				outPutBlc.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-success"
+												${data}
+											</div>
+										  </div> `);
+			});
+	    }
+	};	
+</script>
