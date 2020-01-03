@@ -104,8 +104,8 @@ $( document ).ready(function() {
 		$cntr4OutPut.text('Идет загрузка данных . . .');
 
 		$.ajax({
-			  method: "GET",
-			  url: "http://127.0.0.1:1880/testUrl",
+			  method: 'GET',
+			  url: 'http://127.0.0.1:1880/testUrl',
 			  data: { name: intrfName}
 			})
 		.done(function(data) {

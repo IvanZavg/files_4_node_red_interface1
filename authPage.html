@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Manege Node-RED</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row d-flex flex-column align-items-center jusify-content-center mt-5">
+			<div class="col-4" >
+				<h1 class="col-12 text-center badge badge-dark" style="font-size: 1.5em; font-weight: 400;">Авторизация</h1>
+				<form action="" class="row d-flex justify-content-around" >
+					<input type="text" id="ldap-auth" class="col-10 mt-1 form-control" placeholder="LDAP">
+					<input type="text" id="psw-auth"  class="col-10 mt-1 form-control" placeholder="Password">
+					<input type="submit" id="btn-log-in" class="col-5 mt-3 btn btn-primary" value="login">
+					<input type="reset"  class="col-5 mt-3 btn btn-danger"  value="reset">
+				</form>
+				    <div id="error-res"></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		let ldap    = $('#ldap-auth'),
+			psw     = $('#psw-auth'),
+			btnLog  = $('#btn-log-in'),
+			errRes  = $('#error-res');
+
+		btnLog.click('on', function(e){
+			e.preventDefault();
+			let uData = {
+				ldp : ldap.val(),
+			    psw : psw.val()
+			};
+			
+			if(errRes.hasClass('alert-danger')) errRes.removeClass('alert-danger');
+            errRes.addClass('alert alert-info').text('Проверка доступа. Ожидайте...');
+            
+			$.ajax({
+				url : 'http://127.0.0.1:1880/authChData',
+				contentType  : 'application/json',
+				method : 'POST',
+				data : JSON.stringify(uData)
+			}).done(function(data){
+			    if(data.Trust === 'N'){
+			        document.write('Acssess denied');
+			    }
+			    else if(data.Auth === 'true'){
+			        window.location.replace("http://127.0.0.1:1880/manegerProc");
+			    }else if(data.Auth === 'false'){
+			        errRes.removeClass('alert-info').addClass('alert-danger').text('Неверный пароль или логин!!!');
+			    }
+			    
+			});
+		})
+	</script>
+</body>
+</html>
