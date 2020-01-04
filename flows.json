@@ -1,0 +1,1195 @@
+[
+    {
+        "id": "83d2aeb8.0c9f4",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "679d6572.6f225c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3da80926.3817f6",
+        "type": "subflow",
+        "name": "cheack Auth",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "f80e5814.ad0c38"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1140,
+                "y": 200,
+                "wires": [
+                    {
+                        "id": "6f41d4ad.f4d5dc",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": []
+    },
+    {
+        "id": "58aa6e1.766b29",
+        "type": "subflow",
+        "name": "cheackAuth 2",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 50,
+                "y": 30,
+                "wires": [
+                    {
+                        "id": "dbe0f43c.2f1af8"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1140,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "fee0510b.221c1",
+                        "port": 0
+                    },
+                    {
+                        "id": "8817a203.a5bdd",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1140,
+                "y": 140,
+                "wires": [
+                    {
+                        "id": "fee0510b.221c1",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": []
+    },
+    {
+        "id": "b4b8c147.d7386",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#ffffff",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#ffffff",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial Black,Arial Black,Gadget,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "lockMenu": "true",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 80,
+                "sy": 60,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "afddb14.0651d5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Test Node red Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "2cd2c95.cb03c36",
+        "type": "ui_group",
+        "z": "",
+        "name": "Temp",
+        "tab": "12f101c2.96cf1e",
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "18eab7ed.9a8438",
+        "type": "queue config",
+        "z": "",
+        "name": "TestQueue",
+        "storage": "fs",
+        "path": "D:/test",
+        "timeoutAck": "1000",
+        "startJob": true,
+        "typeTimeout": "move-error",
+        "typeError": "move-error",
+        "retryTimeout": "",
+        "retryError": "",
+        "maxInMemory": "10"
+    },
+    {
+        "id": "2d5e05fc.bd10ca",
+        "type": "queue config",
+        "z": "",
+        "name": "",
+        "storage": "fs",
+        "path": "http://localhost:1880/#flow/1fba5870.b0ff78/5bef2f98.5674a",
+        "timeoutAck": "2000",
+        "startJob": true,
+        "typeTimeout": "move-error",
+        "typeError": "move-error",
+        "retryTimeout": "",
+        "retryError": "",
+        "maxInMemory": "10"
+    },
+    {
+        "id": "12f101c2.96cf1e",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Weather  dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "487fff15.5e28a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Humidity",
+        "tab": "12f101c2.96cf1e",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "b70c2071.947c1",
+        "type": "queue config",
+        "z": "",
+        "name": "",
+        "storage": "fs",
+        "path": "",
+        "timeoutAck": "1000",
+        "startJob": true,
+        "typeTimeout": "move-error",
+        "typeError": "move-error",
+        "retryTimeout": "",
+        "retryError": "",
+        "maxInMemory": ""
+    },
+    {
+        "id": "ed9bab09.72f668",
+        "type": "queue config",
+        "z": "",
+        "name": "",
+        "storage": "fs",
+        "path": "http://localhost:1880/#flow/1fba5870.b0ff78/81a52f39.bcf52",
+        "timeoutAck": "2000",
+        "startJob": true,
+        "typeTimeout": "move-error",
+        "typeError": "move-error",
+        "retryTimeout": "",
+        "retryError": "",
+        "maxInMemory": "10"
+    },
+    {
+        "id": "ab74824d.1850c",
+        "type": "http in",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "url": "/testUrl",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "5e1b2db8.b33894"
+            ]
+        ]
+    },
+    {
+        "id": "86347eb7.6c1c8",
+        "type": "template",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div class=\"container\">\n\t<div class=\"row\">\n\t\t<div class=\"d-flex flex-row col-12 \">\n\t\t\t<button class=\"col-3 btn btn-outline-dark my-2 ml-1\" type=\"submit\" name=\"SendToken\" data-group=\"btns-show-blocks\">Запуск через токен</button>\n\t\t\t<button class=\"col-3 btn btn-outline-dark my-2 ml-1\" type=\"submit\" name=\"StartLdap\" data-group=\"btns-show-blocks\">Запуск через пароль</button>\n \t\t\t<button class=\"col-3 btn btn-outline-dark my-2 ml-1\" type=\"submit\" name=\"InfoSession\" data-group=\"btns-show-blocks\">Состояние сессии</button>  \n\t\t</div>\n\t</div>\t\t\t\n\t<div class=\"row bg-light rounded\" style=\"display : none\" id=\"block-send-token\">\n\t\t<div class=\"d-flex flex-row col-12  mt-3 mb-3\">\n\t\t\t<form class=\"form-inline\">\n\t\t\t    <input class=\"form-control mr-sm-2 ml-1\" type=\"text\" placeholder=\"session token\" id=\"inp-send-token\">\n\t\t\t    <button class=\"btn btn-outline-success my-2 ml-1\" type=\"submit\" id=\"btn-send-token\">Отправить</button>\n\t \t\t</form>\n \t\t</div>\n\t</div>\n\t<div class=\"row bg-light rounded\"  style=\"display : none\" id=\"block-start-sess\">\n\t\t<div class=\"col-12 mt-4\">\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-start\" id=\"r-s-type-start1\" value=\"Prodaction\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-start1\">Prodaction</label>\n\t\t\t</div>\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-start\" id=\"r-s-type-start2\" value=\"Stage\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-start2\">Stage</label>\n\t\t\t</div>\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-start\" id=\"r-s-type-start3\" value=\"Test\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-start3\">Test</label>\n\t\t\t</div>\t\t\t\t\t\t\n\t\t</div>\n\t\t<div class=\"d-flex flex-row col-12 justify-content-between mt-3 mb-4\">\n\t\t\t<form class=\"form-inline\">\t\t\t\t\t\t\n \t\t\t\t<input class=\"col-4 form-control mr-sm-2 ml-1\" type=\"text\" placeholder=\"LDAP\" id=\"ldap-4-start-sess\">\n\t    \t\t<input class=\"col-4 form-control mr-sm-2 ml-1\" type=\"password\" placeholder=\"Password\" id=\"psw-4-start-sess\">\n\t    \t\t<button class=\"col-3 btn btn-outline-success my-2 ml-1\" type=\"submit\" id=\"btn-start-sess\">Запустить</button>\n\t \t\t</form>\n \t\t</div>\n\t</div>\n\t<div class=\"row bg-light rounded\"  style =\"display : none\" id=\"block-get-info\">\n\t\t<div class=\"col-12 mt-4\">\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-info\" id=\"r-s-type-info1\" value=\"Prodaction\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-info1\">Prodaction</label>\n\t\t\t</div>\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-info\" id=\"r-s-type-info2\" value=\"Stage\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-info2\">Stage</label>\n\t\t\t</div>\n\t\t\t<div class=\"form-check form-check-inline  ml-1\">\n\t\t\t  <input class=\"form-check-input\" type=\"radio\" name=\"sess-type-info\" id=\"r-s-type-info3\" value=\"Test\">\n\t\t\t  <label class=\"form-check-label\" for=\"r-s-type-info3\">Test</label>\n\t\t\t</div>\n\t\t\t<button class=\"col-3 btn btn-outline-success my-2 ml-1\" type=\"submit\" id=\"btn-get-info-sess\">Состояние сессии</button>\n\t\t</div>\t\n\t</div>\n\t<div id=\"output-block-u-sess\"></div>\t\t\t\t\t\t\t \t\n</div>\n<script>\n\tstrtLogic();\n\tfunction  strtLogic() {\n\t\tlet outPutBlock = $('#output-block-u-sess');\n\t\tlet controlBlocks = {\n\t\t\t\tSendToken  : {\n\t\t\t\t\tel      : $('#block-send-token'),\n\t\t\t\t\tvisible : 'N'\n\t\t\t\t},\n\t\t\t\tStartLdap   : {\n\t\t\t\t\tel      : $('#block-start-sess'),\n\t\t\t\t\tvisible : 'N'\n\t\t\t\t},\n\t\t\t\tInfoSession : {\n\t\t\t\t\tel      : $('#block-get-info'),\n\t\t\t\t\tvisible : 'N'\n\t\t\t\t} \n\t\t\t}\n\n\t\tlet btnsShowBlocks = $('[data-group =\"btns-show-blocks\"]');\n\n\t\tbtnsShowBlocks.click(function () {\n\t\t\tlet $that = $(this);\n\t\t\tlet objBlock = controlBlocks[$that[0].name];\n\t\t\tif(objBlock.visible == 'Y'){\n\t\t\t\treturn\n\t\t\t}\n\t\t\telse{\n\t\t\t\tfor (key in controlBlocks) {\n\t\t\t\t\tlet blck = controlBlocks[key];\n\t\t\t\t\tif(blck.visible == 'Y') blck.el.hide();\n\t\t\t\t\tblck.visible = 'N';\t\t\t\t\n\t\t\t\t}\n\t\t\t\toutPutBlock.empty();\n\t\t\t\tobjBlock.el.show();\n\t\t\t\tobjBlock.visible = 'Y';\n\t\t\t}\n\t\t});\n\n\n\t\tlet btnSendToken = $('#btn-send-token'),\n\t\t    btnStartSess = $('#btn-start-sess'),\n\t\t    btnGetInfo   = $('#btn-get-info-sess');\n\n\t    btnSendToken.click(function (event)  {\n\t    \tevent.preventDefault();\n\n\t    \tlet inpToken = $('#inp-send-token'),\n\t    \t\tregToken = /[\\w\\d]{20}/i;\n\n\t    \tif(!regToken.test(inpToken.val())){\n\t    \t\toutPutBlock.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t\t\tне корректный токкен : \"${inpToken.val()}, длина ${inpToken.val().length} символов\" \n\t\t\t\t\t\t\t\t\t\t\t\tТоккен должен быть из 20 символов\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t    \t\treturn;\n\t    \t}\n\t    \tlet\tbodyReq  = {\n\t    \t\t\tname     : 'test',\n\t    \t\t\tvalue    : inpToken.val(),\n\t    \t\t\tsessType : 'Prodaction'\n\t    \t\t};\n\n\t    \tinpToken.val('');\n\t    \toutPutBlock.text('Идет загрузка данных . . .');\n\t    \tsendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);\n\t    }); \n\n\t    btnStartSess.click(function (event)  {\n\t    \tevent.preventDefault();\n\t    \tlet inpLDAP  = $('#ldap-4-start-sess'),\n\t    \t\tinpPSW   = $('#psw-4-start-sess'),\n\t    \t\tsessType = $('input[name=\"sess-type-start\"]:checked'),\n\t    \t\tregLDAP  =/^\\w{2}\\d{6}\\w{3}(?:\\d{1,2})?$/i;\n\n\t    \tif(!sessType.val()){\n\t    \t\toutPutBlock.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t\t\tНе выбран тип сессии(Prodaction, Stage, Test)\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t    \t\treturn;\n\t    \t}\n\t    \telse if (!regLDAP.test(inpLDAP.val())){\n\t    \t\toutPutBlock.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t\t\tНе корректный LDAP ${inpLDAP.val()}\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t    \t\treturn;\n\t    \t}\n\t    \telse if (!inpPSW.val()){\n\t    \t\toutPutBlock.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t\t\tВы не указали пароль\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t    \t\treturn;\n\t    \t}\n\t    \tlet\tbodyReq  = {\n\t    \t\t\tname     : 'test',\n\t    \t\t\tldap     : inpLDAP.val(),\n\t    \t\t\tpsw      : inpPSW.val(),\n\t    \t\t\tsessType : sessType.val()\n\t\t\t\t};\n\n\t    \tinpLDAP.val('');\n\t    \tinpPSW.val('');\t\n\t    \toutPutBlock.text('Идет загрузка данных . . .');\n\t    \tsendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);\n\t    }); \n\n\t    btnGetInfo.click(function (event)  {\n\t    \tevent.preventDefault();\n\t    \tlet sessType = $('input[name=\"sess-type-info\"]:checked');\n\n\t    \tif(!sessType.val()){\n\t    \t\toutPutBlock.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t\t\tНе выбран тип сессии(Prodaction, Stage, Test)\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t    \t\treturn;\n\t    \t}\n\t    \tlet\tbodyReq  = {\n\t    \t\t\tname     : 'test',\n\t    \t\t\tsessType : sessType.val()\n\t\t\t\t};\n\n\t\t\toutPutBlock.text('Идет загрузка данных . . .');\n\t    \tsendAjax('http://127.0.0.1:1880/testUrl', 'GET', bodyReq, outPutBlock);\n\t    }); \n\n\t    function sendAjax(urlReq, method, body, outPutBlc){\n\t    \t$.ajax({\n\t\t\t  method : method,\n\t\t\t  url    : urlReq,\n\t\t\t  data   : body\n\t\t\t})\n\t\t\t.done(function(data) {\n\t\t\t\toutPutBlc.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-success\"\n\t\t\t\t\t\t\t\t\t\t\t\t${data}\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t\t\t});\n\t    }\n\t};\t\n</script>",
+        "output": "str",
+        "x": 600,
+        "y": 60,
+        "wires": [
+            [
+                "20221dd1.494842"
+            ]
+        ]
+    },
+    {
+        "id": "20221dd1.494842",
+        "type": "http response",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 820,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ce51d50c.7c6418",
+        "type": "switch",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "property": "payload.name",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "userSID",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "techSID",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "gVar",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 430,
+        "y": 140,
+        "wires": [
+            [
+                "86347eb7.6c1c8"
+            ],
+            [
+                "9502a931.bc57b8"
+            ],
+            [
+                "cb2cdf21.33f04"
+            ]
+        ]
+    },
+    {
+        "id": "9502a931.bc57b8",
+        "type": "template",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<div>\n    <p>\n        Здесь должна отображатся {{payload.name}}\n    </p>\n</div>",
+        "output": "str",
+        "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "20221dd1.494842"
+            ]
+        ]
+    },
+    {
+        "id": "cb2cdf21.33f04",
+        "type": "template",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "<label class=\"col-5\" for=\"select-G-var\">Глобальна переменная</label>\n<div class=\"d-flex flex-row col-8 mt-3 mb-4\">\n<select class=\"col-6 form-control\" id=\"select-G-var\">\n  <option selected=\"selected\" value=\"baseURL\">baseURL</option>\n</select>\n<button class=\"col-3 btn btn-outline-info ml-1\" type=\"submit\" id=\"btn-show-Val\">Show</button>\n</div>\t\n<div class=\"d-flex flex-row col-8 mt-3 mb-4\">\t\t\t\t\n\t<input class=\"col-6 form-control\" type=\"text\" placeholder=\"New value\" id=\"inp-set-ngVal\">\t\n\t<button class=\"col-3 btn btn-outline-warning ml-1\" type=\"submit\" id=\"btn-set-ngVal\">Set</button>\n</div>\n<div class=\"container\" id=\"output-block-var-info\"></div>\n<script>\n\tstrtLogic();\n\tfunction strtLogic() {\n\t\tlet\tbtnShowGlVal = $('#btn-show-Val'),\n\t\t\tinpNewValG   = $('#inp-set-ngVal'),\n\t\t\tbtnSetValG   = $('#btn-set-ngVal'),\n\t\t\tresBlockInf  = $('#output-block-var-info');\n\n\t\tbtnShowGlVal.on('click',function () {\n\t\t\tlet data = {\n\t\t\t\tname : $('#select-G-var option:selected').text(),\n\t\t\t\ttype :'show'\n\t\t\t}; \n\n\t\t\tajaxReq(data);\n\n\t\t});\n\n\t\tbtnSetValG.on('click',function () {\n\t\t\tlet data = {\n\t\t\t\tname  : $('#select-G-var option:selected').text(),\n\t\t\t\tvalue : inpNewValG.val(),\n\t\t\t\ttype  :'newVal',\n\t\t\t}; \n\n\t\t\tajaxReq(data);\n\n\t\t});\n\t\tfunction ajaxReq(data) {\n\t\t\t$.ajax({\n\t\t\t  method : 'GET',\n\t\t\t  url    : 'http://127.0.0.1:1880/globaVariables',\n\t\t\t  data   : data\n\t\t\t})\n\t\t\t.done(function(data) {\n\t\t\t\tlet varName  = data.name,\n\t\t\t\t\tvarVal   = data.value,\n\t\t\t\t\ttypeData = data.type,\n\t\t\t\t\tstate    = data.state,\n\t\t\t\t\tstr \t = '';\n\n\t\t\t\tif(typeData == 'access denied'){\n\t\t\t\t\tresBlockInf.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-${state}\">\n\t\t\t\t\t\t\t\t\t\t\t \tДанные авторизации не обнружены или устарели, попробуйте перезагрузить страницу!\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t\t\t\t}\n\t\t\t\telse if(typeData == 'show'){\n\t\t\t\t\tresBlockInf.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-${state}\">\n\t\t\t\t\t\t\t\t\t\t\t \tЗначение ${varName} = ${!!varVal? varVal : 'undefined'}\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t\t\t\t}\n\t\t\t\telse if(typeData == 'newVal'){\n\t\t\t\t\tif(state  == 'danger'){\n\t\t\t\t\t\tstr = 'НЕ было изменено';\n\t\t\t\t\t}\n\t\t\t\t\telse{\n\t\t\t\t\t\tstr = 'изменено';\n\t\t\t\t\t} \n\t\t\t\t\tresBlockInf.empty().append(`<div class=\"row mt-4\"> \n\t\t\t\t\t\t\t\t\t\t\t<div class=\"col-12 alert alert-${state}\">\n\t\t\t\t\t\t\t\t\t\t\t \tЗначение ${str} ${varName} = ${!!varVal? varVal : 'undefined'}\n\t\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t  </div> `);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n</script>",
+        "output": "str",
+        "x": 600,
+        "y": 220,
+        "wires": [
+            [
+                "20221dd1.494842"
+            ]
+        ]
+    },
+    {
+        "id": "e70f263f.62ef38",
+        "type": "http in",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "url": "authChData",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 380,
+        "wires": [
+            [
+                "c1eb8365.f73d3"
+            ]
+        ]
+    },
+    {
+        "id": "d998ef0a.d3cb1",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "cheack User",
+        "func": "let user = {\n    name : 'vano',\n    psw  : '123'\n}\nlet dict = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9'];\nlet regExLdap = new RegExp(msg.AuthData.ldp,'i');\n\nif(regExLdap.test(msg.userData.ldap) && msg.AuthData.psw == msg.userData.psw){\n    \n    let TS = new Date().getTime();\n    let ldap = msg.payload.ldp;\n    let key  = crKey(dict);\n    \n    TS = strhash(''+TS).substring(0,12);\n    msg.hStr         = TS+ldap+'$'+key;\n    msg.payload      = {};\n    msg.payload.Auth = 'true';\n}\nelse{\n    msg.payload.Auth = 'false';\n}\n\nreturn msg;\n \n \nfunction rand(min,max){\n    return min + Math.floor(Math.random()*max);\n}\nfunction crKey(dict){\n    let str = '';\n    for(let i = 0; i < 10; i++){\n        \n        let j = rand(0,dict.length-1);\n        str += dict[j];\n    }\n    return str;\n}\n\nfunction strhash( str ) {\n    if (str.length % 32 >  0) str += Array(33 - str.length % 32).join(\"z\");\n    var hash = '', \n        bytes = [], \n        i = j = k = a =  0, \n        dict = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','1','2','3','4','5','6','7','8','9'];\n    \n    for (i =  0; i < str.length; i++ ) {\n        ch = str.charCodeAt(i);\n        bytes[j++] = (ch < 127) ? ch & 0xFF : 127;\n    }\n\n    var chunk_len = Math.ceil(bytes.length / 32);\n    \n    for (i= 0; i<bytes.length; i++) {\n        j += bytes[i];\n        k++;\n        if ((k == chunk_len) || (i == bytes.length-1)) {\n            a = Math.floor( j / k );\n            if (a < 32)\n                hash += '0';\n            else if (a > 126)\n                hash += 'z';\n            else\n                hash += dict[ Math.floor( (a-32) / 2.76) ];\n            j = k =  0;\n        }\n    }\n    return hash;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1210,
+        "y": 360,
+        "wires": [
+            [
+                "4f6fd966.cb42c8"
+            ]
+        ]
+    },
+    {
+        "id": "199818a2.38eab7",
+        "type": "http in",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "url": "authP",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 560,
+        "wires": [
+            [
+                "8dfeb9cf.fbc0e8"
+            ]
+        ]
+    },
+    {
+        "id": "8dfeb9cf.fbc0e8",
+        "type": "template",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<html>\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Manege Node-RED</title>\n\t<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Noto+Serif&display=swap\">\n\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css\">\n\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\n\t<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n</head>\n<body>\n\t<div class=\"container\">\n\t\t<div class=\"row d-flex flex-column align-items-center jusify-content-center mt-5\">\n\t\t\t<div class=\"col-4\" >\n\t\t\t\t<h1 class=\"col-12 text-center badge badge-dark\" style=\"font-size: 1.5em; font-weight: 400;\">Авторизация</h1>\n\t\t\t\t<form action=\"\" class=\"row d-flex justify-content-around\" >\n\t\t\t\t\t<input type=\"text\" id=\"ldap-auth\" class=\"col-10 mt-1 form-control\" placeholder=\"LDAP\">\n\t\t\t\t\t<input type=\"text\" id=\"psw-auth\"  class=\"col-10 mt-1 form-control\" placeholder=\"Password\">\n\t\t\t\t\t<input type=\"submit\" id=\"btn-log-in\" class=\"col-5 mt-3 btn btn-primary\" value=\"login\">\n\t\t\t\t\t<input type=\"reset\"  class=\"col-5 mt-3 btn btn-danger\"  value=\"reset\">\n\t\t\t\t</form>\n\t\t\t\t    <div id=\"error-res\"></div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<script>\n\t\tlet ldap    = $('#ldap-auth'),\n\t\t\tpsw     = $('#psw-auth'),\n\t\t\tbtnLog  = $('#btn-log-in'),\n\t\t\terrRes  = $('#error-res');\n\n\t\tbtnLog.click('on', function(e){\n\t\t\te.preventDefault();\n\t\t\tlet uData = {\n\t\t\t\tldp : ldap.val(),\n\t\t\t    psw : psw.val()\n\t\t\t};\n\t\t\t\n\t\t\tif(errRes.hasClass('alert-danger')) errRes.removeClass('alert-danger');\n            errRes.addClass('alert alert-info').text('Проверка доступа. Ожидайте...');\n            \n\t\t\t$.ajax({\n\t\t\t\turl : 'http://127.0.0.1:1880/authChData',\n\t\t\t\tcontentType  : 'application/json',\n\t\t\t\tmethod : 'POST',\n\t\t\t\tdata : JSON.stringify(uData)\n\t\t\t}).done(function(data){\n\t\t\t    if(data.Trust === 'N'){\n\t\t\t        document.write('Acssess denied');\n\t\t\t    }\n\t\t\t    else if(data.Auth === 'true'){\n\t\t\t        window.location.replace(\"http://127.0.0.1:1880/manegerProc\");\n\t\t\t    }else if(data.Auth === 'false'){\n\t\t\t        errRes.removeClass('alert-info').addClass('alert-danger').text('Неверный пароль или логин!!!');\n\t\t\t    }\n\t\t\t    \n\t\t\t});\n\t\t})\n\t</script>\n</body>\n</html>",
+        "output": "str",
+        "x": 340,
+        "y": 560,
+        "wires": [
+            [
+                "e3017974.06ebd8"
+            ]
+        ]
+    },
+    {
+        "id": "e3017974.06ebd8",
+        "type": "http response",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 560,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "f65ea442.190ef8",
+        "type": "http response",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1831.0000114440918,
+        "y": 365.0000009536743,
+        "wires": []
+    },
+    {
+        "id": "7fe1325f.a1fc1c",
+        "type": "http in",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "url": "manegerProc",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 760,
+        "wires": [
+            [
+                "3e89f5c8.6766da"
+            ]
+        ]
+    },
+    {
+        "id": "f80e5814.ad0c38",
+        "type": "function",
+        "z": "3da80926.3817f6",
+        "name": "",
+        "func": "if(!!msg.req.cookies.AK){\n    msg.HasCookies = 'Y';\n    msg.payload.SessVal = msg.req.cookies.AK\n}\nelse{\n    msg.HasCookies = 'N';\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "ac084a87.1465a8"
+            ]
+        ]
+    },
+    {
+        "id": "72068ecb.3c7a5",
+        "type": "template",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title>Manege Node-RED</title>\n\t<link href=\"https://fonts.googleapis.com/css?family=Noto+Serif&display=swap\" rel=\"stylesheet\">\n\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css\">\n\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n\t<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js\"></script>\n\t<style>\n\t    body {\n\tmargin: 10px;\n\tbackground-color:  #f9f9f9 ;\n\tfont-family: \"Lato\", Arial, sans-serif;\n    line-height: 1.6;\n    color: #555;\n    font-size: 16px;\n    min-width: 480px;\n    }\n    \n    #main-menu{\n    \tcursor: pointer;\n    \tdisplay: flex;\n    \tflex-wrap: wrap;\n    \tmin-width: 90%;\n    \tmin-height: 50px;\n    \tbackground-color:rgba(40, 40, 40, 0.9);\n    }\n    \n    .main-menu-titles{\n    \twidth: 24%;\n    \tflex-grow: 1;\n    \tflex-shrink: 0;\n    \tletter-spacing: 0.1em;\n    \tfont-family: serif;/*'Noto Serif', serif;*/\n    \tfont-size: 1em;\n    \ttext-align: center;\n    \tcolor: rgba(240, 240, 240, 1);\n    \n    \n    }\n    \n    .main-menu-titles:nth-child(-n+3){\n    \tborder-right: 2px groove ;\n    }\n    \n    .main-menu-titles:hover{\n    \t background-color: rgba(34, 34, 34, 0.9);\n    }\n    .main-menu-titles:active{\n    \t background-color: rgba(20, 20, 20, 0.9);\n    }\n    \n    #main-block{\n    \tdisplay: block;\n    \tfloat: right;\n        margin-bottom: 0.5em;\n        margin-top: 0.7em;\n        margin-left: 0.4em;\n        margin-right: 0.4em;\n        padding: 10px 15px 15px;\n        border: 1px solid #ddd;\n        border-radius: 3px;\n        background-color: #fff;\n        width: 70%;\n        min-height: 450px;\n        margin: 2em 1em;\n    }\n    \n     \n    #main-block-title span{\n        padding: 4px 10px ;\n        position: relative;\n        color: #666;\n        -webkit-box-decoration-break: clone;\n        box-decoration-break: clone;\n        background-color: rgba(0, 0, 0, 0.05);\n        border-radius: 5px;\n    }\n    \n    \n    #main-block-output p {\n    \tpadding: 10px;\n    \ttext-align: left;\n    \tfont-size: 1em;\n    }\n    \n    #side-bar{\n    \tfloat: left;\n    \twidth:23%;\n    \tmin-height: 500px;\n    \tmargin: 2em 1em;\n    \tborder-radius: 3px;\n    \tbackground-color:rgba(40, 40, 40, 0.9);\n    \tcolor: rgba(240, 240, 240, 1);\n    \tletter-spacing: 0.05em;\n    }\n    \n    #side-bar p{\n    \ttext-align: center;\n    \tmargin: 15px;\n    }\n    \n    #side-bar-cntr ol{\n    \tmargin: 0px;\n    \tpadding: 0px;\n    }\n    #side-bar-cntr li{\n    \tlist-style-position: inside;\n    \tpadding: 10px;\n    \tborder-bottom: 2px groove ;\n    \tcursor: pointer;\n    }\n    \n    #side-bar-cntr li:hover{\n    \t background-color: rgba(34, 34, 34, 0.9);\n    \n    }\n    #side-bar-cntr li:active{\n    \t background-color: rgba(20, 20, 20, 0.9);\n    }\n    \n    #side-bar-cntr li:first-child{\n    \tborder-top-left-radius: 3px;\n    \t border-top-right-radius: 3px;\n    }\n    \n    .hidden{\n    \topacity:0;\n    }\n    \n    h3 {\n        display: block;\n        font-size: 1.2em;\n        margin-block-start: 1em;\n        margin-block-end: 1em;\n        margin-inline-start: 0px;\n        margin-inline-end: 0px;\n        font-weight: 600;\n    }\n    label, input[type=\"radio\"]{\n    \tcursor: pointer;\n    }\n\t</style>\n\t<script>\n\t    $( document ).ready(function() {\n\n    let $sideBar      = $('#side-bar'),\n    \t$sideBarCntr  = $('#side-bar-cntr'),\n    \t$headerTitels = $('.main-menu-titles'),\n    \t$mBlockTitle  = $('#main-block-title span'),\n    \t$cntr4OutPut  = $('#main-block-output');\n\n   \tlet sideBarIsOpen = 'N';\n\tlet mainMenuData = {\n\t\tincomProc : {\n\t\t\tid : \"incom-proc\",\n\t\t\tinfoTitle : \"Внутренние процессы Полиграфологической службы\",\n\t\t\tinfoBlock : \"В процессе разработки\",\n\t\t\tisOpen : false,\n\t\t\tsubTitels : [\n\t\t\t\t{\n\t\t\t\t\ttitle : \"Тест\",\n\t\t\t\t\tname : \"test\",\n\t\t\t\t\turl : \"\"\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\tmotivTalks : {\n\t\t\tid : \"motiv-proc\",\n\t\t\tisOpen : false,\n\t\t\tinfoTitle : \"Мотивационные беседы перед полиграфом\",\n\t\t\tinfoBlock : \"В процессе разработки\",\n\t\t\tsubTitels : []\n\t\t},\n\t\tafterTestTalks :{\n\t\t\tid : \"after-test-talks\",\n\t\t\tisOpen : false,\n\t\t\tinfoTitle : \"Беседы по результатам полиграф тестирования\",\n\t\t\tinfoBlock : \"В процессе разработки\",\n\t\t\tsubTitels : []\n\t\t},\n\t\thelpProc : {\n\t\t\tid : \"help-proc\",\n\t\t\tisOpen : false,\n\t\t\tinfoTitle : \"Вспомогательные процессы\",\n\t\t\tinfoBlock : \"\",\n\t\t\tsubTitels : [\n\t\t\t\t{\n\t\t\t\t\ttitle : \"Пользовательськая сессия\",\n\t\t\t\t\tname : \"userSID\",\n\t\t\t\t\turl : \"\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle : \"Техничемкая сессия\",\n\t\t\t\t\tname : \"techSID\",\n\t\t\t\t\turl : \"\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\ttitle : \"Glabal Variables\",\n\t\t\t\t\tname : \"gVar\",\n\t\t\t\t\turl : \"\"\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t};   \n\n\n\t$headerTitels.click(function(){\t\n\n\t\tlet $that    = $(this);\n\t\tlet menuName = $that.attr('name');\n\t\tlet menuData = mainMenuData[menuName];\n\t\tlet subArr   = mainMenuData[menuName].subTitels;\n\n\t\t$mBlockTitle.text(menuData.infoTitle);\n    \t$cntr4OutPut.empty().append(menuData.infoBlock);\n\t\n\t\tviewSideBar(menuData, subArr);\n\t\t\n\t});\n\n\n\n\n\tfunction clearSideBar(){\n\t\t$('.side-bar-li').unbind()\n\t\t$sideBarCntr.empty();\n\t}\n\n\tfunction fillSidBar(subArr){\n\t\tlet ol = $('<ol>');\n\n\t\tif(subArr.length == 0){\n\t\t\t$sideBarCntr.append(\"<p>данный блок находится в разработке<p>\");\n\t\t}\n\t\telse{\n\t\t\tfor (var i = 0; i < subArr.length;  i++) {\n\t\t\t\tol.append(`<li name=\"${subArr[i].name}\" class=\"side-bar-li\">${subArr[i].title}</li>`);\n\t\t\t}\n\t\t\t$sideBarCntr.append(ol);\n\t\t\t$('.side-bar-li').bind('click', getControlBlock)\n\t\t}\n\t}\n\n\tfunction getControlBlock () {\n\t\tlet $that     = $(this);\n\t\tlet intrfName = $that.attr('name'); \n\t\t$cntr4OutPut.text('Идет загрузка данных . . .');\n\n\t\t$.ajax({\n\t\t\t  method: 'GET',\n\t\t\t  url: 'http://127.0.0.1:1880/testUrl',\n\t\t\t  data: { name: intrfName}\n\t\t})\n\t\t.done(function(data, textStatus, xhr) {\n\t\t        $cntr4OutPut.empty().append(data);\n\t\t})\n\t\t.fail(function(){\n\t\t     $cntr4OutPut.empty().append('<h3>Произошла ошибка, попробуйте позже</h3>');\n\t\t});\n\t}\n\n\tfunction viewSideBar(mData, subArr){\n\t\tif(sideBarIsOpen == 'N'){\n\t\t\tmData.isOpen = true;\n\t\t\ttogleSideBar(subArr);\n\t\t\tsideBarIsOpen = 'Y';\n\t\t}\n\t\telse if (sideBarIsOpen == 'Y' && mData.isOpen == true){\n\t\t\tsideBarIsOpen = 'N';\n\t\t\tmData.isOpen = false;\n\t\t\t$sideBar.removeClass('bounceInLeft').addClass('bounceOutLeft');\n\t\t}\n\t\telse{\n\t\t\ttglMainMenuState();\n\t\t\tmData.isOpen = true;\n\t\t\ttogleSideBar(subArr);\n\t\t\tsetTimeout(togleSideBar, 500, subArr);\n\t\t}\n\t}\n\n\tfunction tglMainMenuState(subArr){\n\t\tfor(key in mainMenuData){\n\t\t\tif(mainMenuData[key].isOpen == true){\n\t\t\t\tmainMenuData[key].isOpen = false;\n\t\t\t}\n\t\t}\n\t}\n\t\n\tfunction togleSideBar (subArr) {\n\t\tif($sideBar.hasClass('hidden')){\n\t\t\tfillSidBar(subArr);\n\t\t\t$sideBar.addClass('bounceInLeft').removeClass('hidden');\n\t\t}\n\t\telse if (!$sideBar.hasClass('hidden') && $sideBar.hasClass('bounceInLeft')) {\n\t\t\t$sideBar.removeClass('bounceInLeft').addClass('bounceOutLeft');\n\t\t}\n\t\telse if($sideBar.hasClass('bounceOutLeft')){\n\t\t\tclearSideBar();\n\t\t\tfillSidBar(subArr);\n\t\t\t$sideBar.removeClass('bounceOutLeft').addClass('bounceInLeft');\n\t\t}\n\t}\n});\n\n\n\t</script>\n</head>\n<body>\n\t<header id='main-menu'>\n\t\t<div id=\"incom-proc\" name=\"incomProc\" class=\"main-menu-titles\" data-is_active=\"none\">\n\t\t\t<h3>Внутренние процессы службы</h3>\n\t\t</div>\n\t\t<div id=\"motiv-proc\" name=\"motivTalks\" class=\"main-menu-titles\" data-is_active=\"none\">\n\t\t\t<h3>Мотивационные беседы</h3>\n\t\t</div>\n\t\t<div id=\"after-test-talks\" name=\"afterTestTalks\" class=\"main-menu-titles\" data-is_active=\"none\">\n\t\t\t<h3>Беседы по результатам</h3 >\n\t\t</div>\n\t\t<div id=\"help-proc\" name=\"helpProc\" class=\"main-menu-titles\" data-is_active=\"none\">\n\t\t\t<h3>Вспомогательные процессы</h3>\n\t\t</div>\n\t</header>\n\t<section id=\"side-bar\" class=\"animated hidden\">\n\t\t<div id=\"side-bar-cntr\">\n\t\t</div>\n\t</section>\t\n\t<section id = \"main-block\">\n\t\t<div class=\"container\">\n\t\t\t<h3 id = \"main-block-title\">\n\t\t\t\t<span>\n\t\t\t\t\tМенеджер процессов\n\t\t\t\t\t\"Полиграфологической Cлужбы\"\n\t\t\t\t</span>\n\t\t\t</h3>\n\t\t</div>\n\t\t<div id = \"main-block-output\">\n\t\t\t<p>\n\t\t\t\tЭтот елементарный интерфейс разработан для управления процессами Департамента \"Полиграфологическая служба\" банка, что реализованы на платформе Node-RED. <br> Включает в себя 4 раздела:\n\t\t\t</p>\n\t\t\t\t<ol>\n\t\t\t\t\t<li>Внутренние процессы службы</li>\n\t\t\t\t\t<li>Мотивационные беседы</li>\n\t\t\t\t\t<li>Беседы по результатам</li>\n\t\t\t\t\t<li>Вспомогательные процессы</li>\n\t\t\t\t</ol>\n\t\t\t\t При выборе одного из разделов должно отобразится боковое меню. В данном меню будут представлены подблоки каждого раздела. При активации соответствуещего блока в центральной части отобразится интерфейс для взаимодействия с сответствующей частью процесса. \n\n\t\t</div>\t\t\n\t</section>\t\n</body>\n</html>",
+        "output": "str",
+        "x": 480,
+        "y": 760,
+        "wires": [
+            [
+                "af1c3980.8a8ea8"
+            ]
+        ]
+    },
+    {
+        "id": "af1c3980.8a8ea8",
+        "type": "http response",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "text/html"
+        },
+        "x": 640,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "ac084a87.1465a8",
+        "type": "switch",
+        "z": "3da80926.3817f6",
+        "name": "",
+        "property": "HasCookies",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "N",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Y",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 180,
+        "wires": [
+            [
+                "9879bef5.23f92"
+            ],
+            [
+                "2fcb8437.2f66ec"
+            ]
+        ]
+    },
+    {
+        "id": "9879bef5.23f92",
+        "type": "http response",
+        "z": "3da80926.3817f6",
+        "name": "",
+        "statusCode": "302",
+        "headers": {
+            "location": "http://127.0.0.1:1880/authP"
+        },
+        "x": 1160,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a2b1379f.1a93e8",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "set Cokie & Sess",
+        "func": "if(!global.get('sessions')){\n    global.set('sessions',[]);\n}\n\nlet sessions  = global.get('sessions');\nlet reg       = /\\$/;\nlet index     = msg.hStr.search(reg);\nlet sessLDAP  = msg.hStr.substring(12,index);\nlet obj       = {\n    LDAP    : sessLDAP,\n    SessVal : msg.hStr\n}\n\nfor(let i = 0; i < sessions.length; i++){\n    if(sessions[i].LDAP == sessLDAP){\n        sessions.splice(i,1);\n    }\n}\n\nsessions.push(obj);\nglobal.set('sessions',sessions);\n\nmsg.headers = {\n        \"Set-Cookie\" :  `AK=${msg.hStr}; Max-Age=600`\n    };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1590,
+        "y": 260,
+        "wires": [
+            [
+                "fefadd4e.35672",
+                "f65ea442.190ef8"
+            ]
+        ]
+    },
+    {
+        "id": "934feafb.63bf38",
+        "type": "inject",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "topic": "",
+        "payload": "{\"name\":\"DN270692ZID\",\"psw\":\"vanoAzow\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 1110,
+        "y": 100,
+        "wires": [
+            [
+                "47027f63.a7cff"
+            ]
+        ]
+    },
+    {
+        "id": "47027f63.a7cff",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": " add users",
+        "func": "if(!global.get('users')){\n    global.set('users',[]);\n}\n\nlet users    = global.get('users');\nlet userLdap = msg.payload.name;\nlet userPSW  = hashPSW(msg.payload.psw);\nlet newUser  = {\n    ldap : userLdap,\n    psw  : userPSW\n};\n\nusers.push(newUser);\n\nglobal.set('users', users);\n\nfunction hashPSW(psw){\n    let indx = Math.floor((psw.length-1)/2),\n        salt = 'wse4$56w';\n    \n    let s1 = psw.substring(0,indx),\n        s2 = psw.substring(indx, psw.length);\n        \n    let s3 = s1 + salt + s2;\n    \n    if(s3.length < 32){\n        for(let i = 0; i < (32-s3.length); i++){\n            s3 += s3[i];\n        }\n    }else if(s3.length > 32){\n        s3 = s3.substring(0,33);\n    }\n    \n    return strhash(s3);\n    \n}\n\nfunction strhash( str ) {\n    if (str.length % 32 >  0) str += Array(33 - str.length % 32).join(\"z\");\n    var hash = '', \n        bytes = [], \n        i = j = k = a =  0, \n        dict = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','1','2','3','4','5','6','7','8','9'];\n    \n    for (i =  0; i < str.length; i++ ) {\n        ch = str.charCodeAt(i);\n        bytes[j++] = (ch < 127) ? ch & 0xFF : 127;\n    }\n\n    var chunk_len = Math.ceil(bytes.length / 32);\n    \n    for (i= 0; i<bytes.length; i++) {\n        j += bytes[i];\n        k++;\n        if ((k == chunk_len) || (i == bytes.length-1)) {\n            a = Math.floor( j / k );\n            if (a < 32)\n                hash += '0';\n            else if (a > 126)\n                hash += 'z';\n            else\n                hash += dict[ Math.floor( (a-32) / 2.76) ];\n            j = k =  0;\n        }\n    }\n    return hash;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1290,
+        "y": 100,
+        "wires": [
+            [
+                "2cc8b228.03d9ce"
+            ]
+        ]
+    },
+    {
+        "id": "2cc8b228.03d9ce",
+        "type": "debug",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1490,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "aabca6a9.824198",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "proces req data auth",
+        "func": "msg.payload.psw  = hashPSW(msg.payload.psw);\n\nfunction hashPSW(psw){\n    let indx = Math.floor((psw.length-1)/2),\n        salt = 'wse4$56w';\n    \n    let s1 = psw.substring(0,indx),\n        s2 = psw.substring(indx, psw.length);\n        \n    let s3 = s1 + salt + s2;\n    \n    if(s3.length < 32){\n        for(let i = 0; i < (32-s3.length); i++){\n            s3 += s3[i];\n        }\n    }else if(s3.length > 32){\n        s3 = s3.substring(0,33);\n    }\n    \n    return strhash(s3);\n    \n}\n\nfunction strhash( str ) {\n    if (str.length % 32 >  0) str += Array(33 - str.length % 32).join(\"z\");\n    var hash = '', \n        bytes = [], \n        i = j = k = a =  0, \n        dict = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','1','2','3','4','5','6','7','8','9'];\n    \n    for (i =  0; i < str.length; i++ ) {\n        ch = str.charCodeAt(i);\n        bytes[j++] = (ch < 127) ? ch & 0xFF : 127;\n    }\n\n    var chunk_len = Math.ceil(bytes.length / 32);\n    \n    for (i= 0; i<bytes.length; i++) {\n        j += bytes[i];\n        k++;\n        if ((k == chunk_len) || (i == bytes.length-1)) {\n            a = Math.floor( j / k );\n            if (a < 32)\n                hash += '0';\n            else if (a > 126)\n                hash += 'z';\n            else\n                hash += dict[ Math.floor( (a-32) / 2.76) ];\n            j = k =  0;\n        }\n    }\n    return hash;\n}\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 820,
+        "y": 360,
+        "wires": [
+            [
+                "999eb42a.303d78"
+            ]
+        ]
+    },
+    {
+        "id": "999eb42a.303d78",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "get Users",
+        "func": "msg.AuthData = msg.payload;\n\nlet users = global.get('users');\nlet userLdap = msg.AuthData.ldp;\n\nmsg.userData = {};\nfor(let i = 0; i < users.length; i++){\n    let regEx = new RegExp(users[i].ldap,'i');\n    if(regEx.test(userLdap)){\n        msg.userData.ldap = users[i].ldap;\n        msg.userData.psw  = users[i].psw;\n        break;\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1020,
+        "y": 360,
+        "wires": [
+            [
+                "d998ef0a.d3cb1"
+            ]
+        ]
+    },
+    {
+        "id": "fefadd4e.35672",
+        "type": "debug",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1890,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c1eb8365.f73d3",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "check req Path",
+        "func": "if(msg.req.headers.host == '127.0.0.1:1880'){\n    msg.trust = 'Y';\n}else{\n    msg.trust = 'N';\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "91e62885.895688"
+            ]
+        ]
+    },
+    {
+        "id": "a2dee25b.4978d",
+        "type": "switch",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "property": "trust",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "Y",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "N",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "aabca6a9.824198"
+            ],
+            [
+                "bc22f9f4.dc6c08"
+            ]
+        ]
+    },
+    {
+        "id": "bc22f9f4.dc6c08",
+        "type": "function",
+        "z": "83d2aeb8.0c9f4",
+        "name": "preapare res (denied access)",
+        "func": "msg.payload = {\n    Trust : 'N'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 840,
+        "y": 420,
+        "wires": [
+            [
+                "5490d010.25159"
+            ]
+        ]
+    },
+    {
+        "id": "5490d010.25159",
+        "type": "http response",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1100,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "4f6fd966.cb42c8",
+        "type": "switch",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "property": "payload.Auth",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "true",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "false",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1370,
+        "y": 360,
+        "wires": [
+            [
+                "a2b1379f.1a93e8"
+            ],
+            [
+                "f65ea442.190ef8"
+            ]
+        ]
+    },
+    {
+        "id": "91e62885.895688",
+        "type": "delay",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "a2dee25b.4978d"
+            ]
+        ]
+    },
+    {
+        "id": "2fcb8437.2f66ec",
+        "type": "function",
+        "z": "3da80926.3817f6",
+        "name": "get SessData",
+        "func": "let sessions  = global.get('sessions'),\n    reg       = /\\$/,\n    sessVal   = msg.payload.SessVal,\n    index     = sessVal.search(reg),\n    sessLDAP  = sessVal.substring(12,index);\n\nmsg.SessData  = {};\n\nfor(let i = 0; i < sessions.length; i++){\n    if(sessions[i].LDAP == sessLDAP){\n        msg.SessData.LDAP = sessions[i].LDAP;\n        msg.SessData.SessVal = sessions[i].SessVal;\n        break;\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "1069c0b2.d728ef"
+            ]
+        ]
+    },
+    {
+        "id": "1069c0b2.d728ef",
+        "type": "function",
+        "z": "3da80926.3817f6",
+        "name": "cheack sess val",
+        "func": "if(!msg.SessData.SessVal){\n    msg.validCokie = 'N';\n}\nelse if(msg.payload.SessVal == msg.SessData.SessVal ){\n    msg.validCokie = 'Y';\n}\nelse{\n    msg.validCokie = 'N';\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 780,
+        "y": 200,
+        "wires": [
+            [
+                "6f41d4ad.f4d5dc"
+            ]
+        ]
+    },
+    {
+        "id": "6f41d4ad.f4d5dc",
+        "type": "switch",
+        "z": "3da80926.3817f6",
+        "name": "",
+        "property": "validCokie",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "N",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Y",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 200,
+        "wires": [
+            [
+                "9879bef5.23f92"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3e89f5c8.6766da",
+        "type": "subflow:3da80926.3817f6",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "env": [],
+        "x": 310,
+        "y": 760,
+        "wires": [
+            [
+                "72068ecb.3c7a5"
+            ]
+        ]
+    },
+    {
+        "id": "5e1b2db8.b33894",
+        "type": "subflow:3da80926.3817f6",
+        "z": "83d2aeb8.0c9f4",
+        "name": "",
+        "env": [],
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "ce51d50c.7c6418"
+            ]
+        ]
+    },
+    {
+        "id": "4ef43a5c.d5f494",
+        "type": "http in",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "url": "/globaVariables",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "39c50d86.254aa2"
+            ]
+        ]
+    },
+    {
+        "id": "1640dcc0.897123",
+        "type": "inject",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca1a9781.21ef88",
+        "type": "function",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "func": "if(msg.payload.type == 'show'){\n    msg.payload.value = !global.get(msg.payload.name) ? '' : global.get(msg.payload.name);\n    \n    if(!!msg.payload.value){\n        msg.payload.state  = 'success';\n    }\n    else{\n        msg.payload.state  = 'danger';\n    }\n}\nelse if(msg.payload.type == 'newVal'){\n    global.set(msg.payload.name, msg.payload.value);\n    let curVal = global.get(msg.payload.name);\n    \n    if(msg.payload.value == curVal){\n        msg.payload.state  = 'success';\n    }\n    else{\n        msg.payload.state  = 'danger';\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 160,
+        "wires": [
+            [
+                "a8c15d5b.8f8bd",
+                "ae9ac71d.dd45e8"
+            ]
+        ]
+    },
+    {
+        "id": "a8c15d5b.8f8bd",
+        "type": "http response",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 760,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ae9ac71d.dd45e8",
+        "type": "debug",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 750,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "dbe0f43c.2f1af8",
+        "type": "function",
+        "z": "58aa6e1.766b29",
+        "name": "",
+        "func": "if(!!msg.req.cookies.AK){\n    msg.HasCookies = 'Y';\n    msg.payload.SessVal = msg.req.cookies.AK\n}\nelse{\n    msg.HasCookies = 'N';\n}\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "8817a203.a5bdd"
+            ]
+        ]
+    },
+    {
+        "id": "8817a203.a5bdd",
+        "type": "switch",
+        "z": "58aa6e1.766b29",
+        "name": "",
+        "property": "HasCookies",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "N",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Y",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 80,
+        "wires": [
+            [],
+            [
+                "f0272547.b08e18"
+            ]
+        ]
+    },
+    {
+        "id": "f0272547.b08e18",
+        "type": "function",
+        "z": "58aa6e1.766b29",
+        "name": "get SessData",
+        "func": "let sessions  = global.get('sessions'),\n    reg       = /\\$/,\n    sessVal   = msg.payload.SessVal,\n    index     = sessVal.search(reg),\n    sessLDAP  = sessVal.substring(12,index);\n\nmsg.SessData  = {};\n\nfor(let i = 0; i < sessions.length; i++){\n    if(sessions[i].LDAP == sessLDAP){\n        msg.SessData.LDAP = sessions[i].LDAP;\n        msg.SessData.SessVal = sessions[i].SessVal;\n        break;\n    }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 100,
+        "wires": [
+            [
+                "8b5737e7.43c1c8"
+            ]
+        ]
+    },
+    {
+        "id": "8b5737e7.43c1c8",
+        "type": "function",
+        "z": "58aa6e1.766b29",
+        "name": "cheack sess val",
+        "func": "if(!msg.SessData.SessVal){\n    msg.validCokie = 'N';\n}\nelse if(msg.payload.SessVal == msg.SessData.SessVal ){\n    msg.validCokie = 'Y';\n}\nelse{\n    msg.validCokie = 'N';\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 780,
+        "y": 100,
+        "wires": [
+            [
+                "fee0510b.221c1"
+            ]
+        ]
+    },
+    {
+        "id": "fee0510b.221c1",
+        "type": "switch",
+        "z": "58aa6e1.766b29",
+        "name": "",
+        "property": "validCokie",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "N",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "Y",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 990,
+        "y": 100,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "39c50d86.254aa2",
+        "type": "subflow:58aa6e1.766b29",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "env": [],
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "b1b166e4.02df68"
+            ],
+            [
+                "ca1a9781.21ef88"
+            ]
+        ]
+    },
+    {
+        "id": "b1b166e4.02df68",
+        "type": "function",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "func": "msg.payload = {};\nmsg.payload.state = 'danger';\nmsg.payload.type  = 'access denied';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "a8c15d5b.8f8bd",
+                "748fba85.1a27f4"
+            ]
+        ]
+    },
+    {
+        "id": "748fba85.1a27f4",
+        "type": "debug",
+        "z": "679d6572.6f225c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 750,
+        "y": 40,
+        "wires": []
+    }
+]

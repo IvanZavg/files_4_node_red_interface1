@@ -1,0 +1,84 @@
+<label class="col-5" for="select-G-var">Глобальна переменная</label>
+<div class="d-flex flex-row col-8 mt-3 mb-4">
+<select class="col-6 form-control" id="select-G-var">
+  <option selected="selected" value="baseURL">baseURL</option>
+</select>
+<button class="col-3 btn btn-outline-info ml-1" type="submit" id="btn-show-Val">Show</button>
+</div>	
+<div class="d-flex flex-row col-8 mt-3 mb-4">				
+	<input class="col-6 form-control" type="text" placeholder="New value" id="inp-set-ngVal">	
+	<button class="col-3 btn btn-outline-warning ml-1" type="submit" id="btn-set-ngVal">Set</button>
+</div>
+<div class="container" id="output-block-var-info"></div>
+<script>
+	strtLogic();
+	function strtLogic() {
+		let	btnShowGlVal = $('#btn-show-Val'),
+			inpNewValG   = $('#inp-set-ngVal'),
+			btnSetValG   = $('#btn-set-ngVal'),
+			resBlockInf  = $('#output-block-var-info');
+
+		btnShowGlVal.on('click',function () {
+			let data = {
+				name : $('#select-G-var option:selected').text(),
+				type :'show'
+			}; 
+
+			ajaxReq(data);
+
+		});
+
+		btnSetValG.on('click',function () {
+			let data = {
+				name  : $('#select-G-var option:selected').text(),
+				value : inpNewValG.val(),
+				type  :'newVal',
+			}; 
+
+			ajaxReq(data);
+
+		});
+		function ajaxReq(data) {
+			$.ajax({
+			  method : 'GET',
+			  url    : 'http://127.0.0.1:1880/globaVariables',
+			  data   : data
+			})
+			.done(function(data) {
+				let varName  = data.name,
+					varVal   = data.value,
+					typeData = data.type,
+					state    = data.state,
+					str 	 = '';
+
+				if(typeData == 'access denied'){
+					resBlockInf.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-${state}">
+											 	Данные авторизации не обнружены или устарели, попробуйте перезагрузить страницу!
+											</div>
+										  </div> `);
+				}
+				else if(typeData == 'show'){
+					resBlockInf.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-${state}">
+											 	Значение ${varName} = ${!!varVal? varVal : 'undefined'}
+											</div>
+										  </div> `);
+				}
+				else if(typeData == 'newVal'){
+					if(state  == 'danger'){
+						str = 'НЕ было изменено';
+					}
+					else{
+						str = 'изменено';
+					} 
+					resBlockInf.empty().append(`<div class="row mt-4"> 
+											<div class="col-12 alert alert-${state}">
+											 	Значение ${str} ${varName} = ${!!varVal? varVal : 'undefined'}
+											</div>
+										  </div> `);
+				}
+			});
+		}
+	}
+</script>
