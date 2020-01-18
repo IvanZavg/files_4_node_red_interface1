@@ -1,0 +1,144 @@
+<div id = "blc-data-2-send">
+	<table class="table table-striped" id = "table-data-2-send">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">#</th>
+	      <th scope="col">NCDC</th>
+	      <th scope="col">CLTP</th>
+	      <th scope="col">DATE</th>
+	      <th scope="col">TIME</th>
+	      <th scope="col">LDAP</th>
+	      <th scope="col">IDEKB</th> 
+	      <th scope="col">LDAP_U</th>
+	      <th scope="col">SKK_EVNT</th>
+	    </tr>
+	  </thead>
+	</table>
+	<div class="col-12 d-flex justify-content-end">
+		<button class="col-3 btn btn-outline-danger my-2 ml-1" type="submit" id="btn-clear-data">Очистить Данные</button>
+		<button class="col-3 btn btn-outline-success my-2 ml-1" type="submit" id="btn-send-data">Отправить</button>
+	</div>
+	<div id="output-block-info" class="mt-2 mb-2"></div>
+</div>
+<div class = "d-flex justify-content-between align-items-end" id="blc-2-inp-data">
+	<div class="col-8">
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">NCDC</span>
+		  </div>
+		  <input name="NCDC" type="text" class="form-control inp-s-data-gr" placeholder="Карточка Приказа (№)" aria-describedby="basic-addon1">
+		</div>
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">CLTP</span>
+		  </div>
+		  <input name="CLTP" type="text" class="form-control inp-s-data-gr" placeholder="Тип (сотрудника/кандидата)" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">DATE</span>
+		  </div>
+		  <input name="DATE" type="text" class="form-control inp-s-data-gr" placeholder="Дата теста (yyyy-mm-dd)" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">TIME</span>
+		  </div>
+		  <input name="TIME" type="text" class="form-control inp-s-data-gr" placeholder="Время теста (hh-mm)" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">LDAP</span>
+		  </div>
+		  <input name="LDAP" type="text" class="form-control inp-s-data-gr" placeholder="LDAP тестируемого" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">IDEKB</span>
+		  </div>
+		  <input name="IDEKB" type="text" class="form-control inp-s-data-gr" placeholder="ЕКБ тестируемого" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">LDAP_U</span>
+		  </div>
+		  <input name="LDAP_U" type="text" class="form-control inp-s-data-gr" placeholder="LDAP уведомляющего (руководителя)" aria-describedby="basic-addon1">
+		</div>
+
+		<div class="col-12 input-group mt-2">
+		  <div class="col-4 input-group-prepend">
+		    <span class="col-12 input-group-text" id="basic-addon1">SKK_EVNT</span>
+		  </div>
+		  <input name="SKK_EVNT" type="text" class="form-control inp-s-data-gr" placeholder="№ события скк" aria-describedby="basic-addon1">
+		</div>
+	</div>
+	<button class="col-3 btn btn-outline-dark ml-1" title="добавить данные в список ручной заливки мотивационок" type="submit" id="btn-add-data">Добавить</button>
+</div>
+<script>
+	let blcInfo  = $('#output-block-info'),
+		dataTbl  = $('#table-data-2-send'),
+		inpList  = $('.inp-s-data-gr'),
+		btnAdd   = $('#btn-add-data'),
+		btnSend  = $('#btn-send-data'),
+		btnClear = $('#btn-clear-data'),
+		cnt      = 1;
+		dataObj  = {};
+
+	btnClear.on('click', function () {
+		if(!dataObj[1]){
+			blcInfo.empty().append(`<div class="alert alert-danger mt-3">Список данных пуст, для удаления добавьте сначала данные в таблицу</div>`);
+			return;
+		}
+		$('#tbody-data-send').remove();
+		dataObj = {};
+		blcInfo.empty().append(`<div class="alert alert-warning mt-3">Данные удалены</div>`);
+	})
+
+	btnAdd.on('click', function () {
+
+		let tempObj = {},
+			apdStr  = `<tr><td>${cnt}</td>`,
+			tBody;
+
+			if($('#tbody-data-send').length == 0){
+				dataTbl.append('<tbody id = "tbody-data-send"></tbody>');
+			}
+			tBody = $('#tbody-data-send');
+			
+		for(let i = 0; i < inpList.length; i++){
+			if(inpList[i].value == ''){
+				blcInfo.empty().append(`<div class="alert alert-danger mt-3">Все поля должны быть заполнены!</div>`);
+				return;
+			}
+			tempObj[inpList[i].name] = inpList[i].value;
+			if(i + 1 < inpList.length ){
+				apdStr += `<td>${inpList[i].value.trim()}</td>`;
+			}else{
+				apdStr += `<td>${inpList[i].value.trim()}</td></tr>`;
+			}
+		}
+		dataObj[cnt++] = tempObj;
+		blcInfo.empty().append(`<div class="alert alert-success mt-3">Данные добавлены в список на отправку</div>`);
+		tBody.append(apdStr);
+	});
+
+	btnSend.on('click', function () {
+		if(!dataObj[1]){
+			blcInfo.empty().append(`<div class="alert alert-danger mt-3">Список данных пуст, для отпрвки добавьте сначала данные в таблицу</div>`);
+			return;
+		}
+		$.ajax({
+		  method : 'POST',
+		  url    : 'http://127.0.0.1:1880/addMotByHand',
+		  data   : dataObj
+		})
+		.done(function(data){
+			blcInfo.empty().append(`<div class="alert alert-${data.state} mt-3">${data.msg}</div>`);
+		});
+	});
+</script>	
