@@ -1,0 +1,69 @@
+<div class="container d-flex">
+	<div class="col-5 form-group ml-2 border border-info rounded">
+	    <p>Выберите необходимый расчет:</p>
+	    <select class="form-control" id="slct-stat-acount">
+	    </select>
+  	</div>
+  	<div class="d-flex flex-wrap col-6 form-group ml-2 border border-info rounded">
+	    <p class="col-12">Выберете период за который нужен расчет:</p>
+	    <div class="col-6">
+	    	<input type="date" class="form-control" id="date-start" aria-describedby="data-start-chose-help">
+	    	<small id="data-start-chose-help" class="form-text text-muted">Начальная дата</small>
+	    </div>
+	     <div class="col-6">
+	    	<input type="date" class="form-control" id="date-end" aria-describedby="data-end-chose-help">
+	    	<small id="data-end-chose-help" class="form-text text-muted">Конечная дата</small>
+	    </div>
+  	</div>
+</div>
+<div class="d-flex flex-row-reverse col-12">
+		<button id="btn-get-stat" class="btn btn-success mr-4">Получить данные</button>
+	</div>
+<div id="blc-output-stat"></div>
+<script>
+	init_proc()
+	function init_proc () {
+		let slctStat      = $('#slct-stat-acount'),
+			dateStart     = $('#date-start'),
+			dateEnd       = $('#date-end'),
+			btnGetStat    = $('#btn-get-stat'),
+			blcOutPutStat = $('#blc-output-stat'),
+			strParse      = 'Stat1,Стат расчет 1,Stat2,Стат расчет 2'.split(','),
+			strSetOptions = '';
+
+		for(let i = 0; i < strParse.length; i++){
+			strSetOptions += `<option value="${strParse[i]}">${strParse[++i]}</option>`;
+		}
+		slctStat.append(strSetOptions);
+		btnGetStat.on('click', function () {
+			$.ajax({
+				  url: "http://127.0.0.1:1880/getStat",
+				  data: {
+				  	"name"  : $('option:selected',slctStat).val(),
+				  	"start" : dateStart.val(),
+				  	"end"   : dateEnd.val(),
+				  }
+			}).done(function(data) {
+				let strTable = `<table class="table table-striped mt-3">
+										<thead class="thead-dark">
+										<tr>`;
+				for(let key in data[0]){
+					strTable += `<th>${key}</th>`
+				}
+				strTable += `</tr></thead><tbody>`;
+
+				for(let i = 0; i < data.length; i++){
+					strTable += '<tr>';
+					for(let key in data[0]){
+						strTable += `<td>${ data[0][key]}</td>`
+					}
+					strTable += '</tr>';
+				}
+				strTable += '<tbody></table.';
+
+				 blcOutPutStat.empty().append(strTable);
+				 console.log(data);
+			});
+		})
+	}
+</script>
